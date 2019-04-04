@@ -16,13 +16,13 @@ Implement a Bearer Authentication system with optional token expiry, api keys, a
 
 ### Requirements
 
-* Install the core bearer authorization system
-  * `middleware.js` - Handle the Bearer Header to pull and verify with the token
-  * `users-model.js` - Add a bearer authorization method that verifies the token
+[ ] Install the core bearer authorization system
+  [x] `middleware.js` - Handle the Bearer Header to pull and verify with the token
+  [x] `users-model.js` - Add a bearer authorization method that verifies the token
   
 * Improve the core bearer authorization system...
-  * Alter the JWT to be time sensitive (valid for 15 minutes)
-  * Alter the JWT to be single-use
+  [x] Alter the JWT to be time sensitive (valid for 15 minutes)
+  [x] Alter the JWT to be single-use
     * With every authenticated access, re-send a new JWT token as a cookie or header
     * Disable those that you've already authenticated
   
@@ -38,7 +38,7 @@ Implement a Bearer Authentication system with optional token expiry, api keys, a
   * Tokens can optionally be expired
   * Expired tokens do not allow a user to login
   * Auth Keys can login a user as a token would
-  * Auth Keys do not expire
+  * Auth Keys do not expire 
 
 ### Deployment
 * Your server must be deployed to and working on Heroku, with tests passing in Travis.

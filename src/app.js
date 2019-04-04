@@ -1,5 +1,10 @@
 'use strict';
-
+/**
+ * @module {} src/app.js
+ * exports the fact that the server is running.
+ * Imports the authRouter from router.js
+ * Imports all error handlers
+ */
 // 3rd Party Resources
 const express = require('express');
 const cors = require('cors');
@@ -28,7 +33,11 @@ app.use(notFound);
 app.use(errorHandler);
 
 let isRunning = false;
-
+/**
+ * @param  {} port
+ * listens for port running
+ * Lets us know that port is up
+ */
 module.exports = {
   server: app,
   start: (port) => {
