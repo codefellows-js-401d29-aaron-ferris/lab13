@@ -1,5 +1,8 @@
 'use strict';
-
+/*
+ * @module 
+ * Imports start function from app and runs the app on port
+**/
 require('dotenv').config();
 
 // Start up DB Server

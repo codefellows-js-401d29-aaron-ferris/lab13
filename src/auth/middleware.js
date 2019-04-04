@@ -1,15 +1,26 @@
 'use strict';
-
+/**
+ * @param  {} /src/auth/middleware
+ * exports the handling of request and response to create auth bearer tokens, basic tokens and to overall authenticate
+ */
 const User = require('./users-model.js');
 
 module.exports = (req, res, next) => {
   
+  /**
+   * Switch
+   * case 1 uses basic authentication
+   * case 2 uses bearer authentication
+   * case 3 runs autherror
+   */
   try {
     let [authType, authString] = req.headers.authorization.split(/\s+/);
     
     switch( authType.toLowerCase() ) {
       case 'basic': 
         return _authBasic(authString);
+      case 'bearer':
+        return _authBearer(authString);
       default: 
         return _authError();
     }
@@ -17,8 +28,25 @@ module.exports = (req, res, next) => {
   catch(e) {
     next(e);
   }
+  /**
+   * @param  {} str
+   * @param  {} {returnUser.authenticateBearer(str
+   * @param  {} .then(user=>authenticate(user
+   * @param  {} .catch(next
+   */
+  function _authBearer(str) {
+    return User.authenticateBearer(str)
+      .then( user => authenticate(user) )
+        .catch( next )
+  }
   
   
+  /**
+   * @param  {} str
+   * @param  {} {letbase64Buffer=Buffer.from(str
+   * @param  {} ;letbufferString=base64Buffer.toString
+   * @param  {} ;let[username
+   */
   function _authBasic(str) {
     // str: am9objpqb2hubnk=
     let base64Buffer = Buffer.from(str, 'base64'); // <Buffer 01 02 ...>
@@ -31,6 +59,13 @@ module.exports = (req, res, next) => {
       .catch(next);
   }
 
+  /**
+   * @param  {} user
+   * @param  {} {if(user
+   * @param  {} {req.user=user;req.token=user.generateToken(
+   * @param  {} ;next(
+   * @param  {} ;}else{_authError(
+   */
   function _authenticate(user) {
     if(user) {
       req.user = user;
