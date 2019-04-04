@@ -6,7 +6,7 @@
 ### Author: Aaron Ferris
 
 ### Links and Resources
-* [Pull request](https://github.com/codefellows-js-401d29-aaron-ferris/lab13/pull/1)
+* [Pull request](https://github.com/codefellows-js-401d29-aaron-ferris/lab13/pull/6)
 * [travis](https://travis-ci.com/codefellows-js-401d29-aaron-ferris/lab13)
 * [front-end](https://peaceful-mountain-92990.herokuapp.com/) (when applicable)
 
