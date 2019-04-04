@@ -6,13 +6,12 @@
 ### Author: Aaron Ferris
 
 ### Links and Resources
-* [Pull request](http://xyz.com)
-* [travis](http://xyz.com)
+* [Pull request](https://github.com/codefellows-js-401d29-aaron-ferris/lab13/pull/1)
+* [travis](https://travis-ci.com/codefellows-js-401d29-aaron-ferris/lab13)
 * [front-end](https://peaceful-mountain-92990.herokuapp.com/) (when applicable)
 
 #### Documentation
-* [swagger](http://xyz.com) (API assignments only)
-* [jsdoc](http://xyz.com) (All assignments)
+* [jsdoc](https://peaceful-mountain-92990.herokuapp.com/doc)
 
 ### Modules
 #### `index.js`
@@ -73,13 +72,25 @@
   * this makes sure you have prequisite filepath
 * in the other 
   * nodemon or live server
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
-  
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+* commands to run in the console at the base
+  * echo '{“username”:“Aaron”, “password”:“FRISBEE”}' | http post :3000/signup
+    * creates a user with Aaron and FRISBEE
+  * http post :3000/signin -a Aaron:FRISBEE
+    * signs in with username and password
+    * will give a TOKEN back in the console
+  * http post :3000/signin "Authorization:Bearer __TOKEN_FROM_SIGNIN__"
+    * insert token from before to sign in
 
+  
+#### NOTES: 
+There are currently some settings that may effect experience with tokens  
+ * SecretAddon: adds to secret so it is different every time and cannot be reused
+ * Expiration: makes it last for 15 minuetes currently
+
+ #### Completion notes:
+ I went decently deep looking at a whole lot of documents in order to try to find specific ways to do things. I got down some rabbit holes on how to try to implement later versions, but after success on the first two I had some trouble. I did find the first two in stack overflow, but the answers were spread out for me, and not readily apparent.
+ I hope to refactor this later for a more complete understanding
 #### UML
-Link to an image of the UML for your application and response to events
+Link to an image of the UML for your application and response to events which can be fond and modified in users model
+
+
